@@ -1,0 +1,30 @@
+version: "3.5"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: ${DB_HOST}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_TCP_PORT: ${DB_PORT}
+
+  backend:
+    restart: always
+    command: bash -c "./wait-for-it.sh -h ${DB_HOST} -p ${DB_PORT} && npm run start:dev"
+    build: ./backend
+    links:
+      - db:${DB_HOST}
+    depends_on:
+      - db
+    ports:
+      - "0.0.0.0:${BACKEND_PORT}:${BACKEND_PORT}"
+    volumes:
+          - ./backend:/app
+    env_file: .env

@@ -1,0 +1,43 @@
+.top_header, .top_header input {
+    background-color: #000;
+    color: #fff;
+    height: 50px;
+}
+
+.top_header button {
+    color: #fff;
+}
+
+.top_header .btn-flat.btn-flat[disabled] {
+    color: #343434 !important;
+}
+
+.fab-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: none;
+}
+
+.prevented_link {
+    color: #000;
+}
+
+.back_link span {
+    font-size: 18px;
+}
+
+.back_link_container {
+    padding: 15px 0;
+}
+
+.input-field div.error {
+    position: relative;
+    left: 0rem;
+    font-size: 0.8rem;
+    color: #FF4081;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+}

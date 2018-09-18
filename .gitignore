@@ -1,0 +1,5 @@
+database
+.idea
+.env
+backend/node_modules
+backend/public/libs/*

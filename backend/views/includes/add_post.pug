@@ -1,0 +1,15 @@
+script(src='/scripts/add_post.js')
+
+form.col.s12#postadd(name="add_post")
+    div.row
+        div.input-field.col.s12
+            input.validate(type="text" name="title" id="title" )
+            label(for="title") Title
+    div.row
+        div.input-field.col.s12
+            textarea.validate.materialize-textarea(name="post_content" id="content")
+            label(for="content") Content
+            button.btn.waves-effect.waves-light.right(type="submit" disabled) Create post
+                i.material-icons.right send
+
+

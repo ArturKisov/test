@@ -1,0 +1,37 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/styles/post_item.css')
+    script(src='/scripts/post_responses.js')
+    include ./mixins/back_arrow.pug
+    div.container
+        +back_arrow('/posts', 'To posts')
+        div.post_item
+            h2.post_name #{post.title}
+            div.post_meta
+                span Created at:
+                span.post_date_created #{post.created_at}
+            div.post_author_container
+                span Author:
+                span.post_author_name #{post.user_name}
+            p.post_description #{post.post_content}
+        div.divider
+        div.responses_container
+            form.col.s12#response_add(name="response_add")
+                div.row
+                    div.input-field.col.s12
+                        textarea.validate.materialize-textarea(name="response_content" id="response_content" placeholder="Text your response")
+                        button.btn.waves-effect.waves-light.right(type="submit" disabled) response
+                            i.material-icons.right send
+            h4 Responses
+            div.responses_list
+                each response in post.responses
+                    div.responses_item(data-responseid=response.id data-author=response.user_name)
+                        div.row.responses_iten_header
+                            div.col.s8.responses_author.valign-wrapper
+                                span #{response.user_name}
+                            div.col.s4.remove_btn_container
+                                button.right.btn-flat.remove_btn Remove response
+                        div.row.s12
+                            div.col.s12.responses_content #{response.response_content}
+                        div.divider
+

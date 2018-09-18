@@ -1,0 +1,7 @@
+extends layout
+block content
+    include ./mixins/back_arrow.pug
+    div.container
+        +back_arrow('/posts', 'To posts')
+        h2 Create post
+        include includes/add_post

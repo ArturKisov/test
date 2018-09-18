@@ -1,0 +1,37 @@
+.post_author_container {
+    color: #b1afb3;
+}
+
+.post_author_container .post_author_name {
+    color: #000;
+    margin-left: 10px;
+}
+
+.post_item {
+    display: block;
+    padding-top: 20px;
+}
+
+.post_item .post_name {
+    margin-top: 0;
+}
+
+.post_item .remove_btn_container {
+    display: none;
+
+}
+
+.post_item .post_meta {
+    color: #b1afb3;
+}
+
+.post_item .post_date_created {
+    margin-left: 10px;
+    color: #000;
+}
+
+.post_item .remove_btn_container .remove_btn {
+    color: red;
+    border-radius: 5px;
+    border: 1px solid red;
+}

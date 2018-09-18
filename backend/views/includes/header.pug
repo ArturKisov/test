@@ -1,0 +1,13 @@
+script(src='/scripts/login_header.js')
+header.top_header.row.valign-wrapper
+    div.container
+        div.right.col.s4.user_container.valign-wrapper
+            span.col.s8.user_name
+            button.col.offset-s1.s2.btn-flat.logout_btn.right(type="button")
+                i.material-icons power_settings_new
+        form.right.col.s4.valign-wrapper#login_form
+            input.col.s8(placeholder="Your name" type="text" name="user_name" id="login_name" )
+            button.col.offset-s1.s2.btn-flat.right(type="submit" disabled)
+                i.material-icons save
+
+

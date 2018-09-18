@@ -1,0 +1,32 @@
+.post_meta, .post_author_container {
+    color: #b1afb3;
+}
+
+.post_meta .post_date_created, .post_author_container .post_author_name {
+    margin-left: 10px;
+    color: #000;
+}
+
+.responses_item {
+    padding: 15px 0;
+}
+
+.responses_iten_header,
+.responses_author,
+.remove_btn_container {
+    height: 40px;
+}
+
+.remove_btn_container .remove_btn {
+    color: red;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+
+.remove_btn_container {
+    display: none;
+}
+
+#response_add {
+    display: none;
+}

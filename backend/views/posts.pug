@@ -1,0 +1,30 @@
+extends layout
+block content
+    script(src='/scripts/posts_list.js')
+    link(rel='stylesheet', href='/styles/post_list.css')
+    div.container
+        h2 Posts
+        div.post_list
+            each post in posts
+                div.row.hoverable.z-depth-2.post_item(href=`/posts/${post.id}` data-postid=post.id data-author=post.user_name)
+                    div.row
+                        div.col.s6
+                            h4.post_name
+                                a(href=`/posts/${post.id}`)
+                                    span #{post.title}
+                            div.post_meta
+                                span Created at:
+                                span.post_date_created #{post.created_at}
+                        div.col.s6
+                            div.right.right-align.post_author_container
+                                span Author:
+                                span.post_author_name #{post.user_name}
+                            div.right.remove_btn_container
+                                button.btn-flat.remove_btn Remove post
+                    div.row
+                        div.col.s12
+                            p.post_description.truncate #{post.post_content}
+
+
+    a.btn-floating.btn-large.waves-effect.waves-light.red.fab-btn.create_post_btn(href="/posts/create")
+        i.material-icons add
