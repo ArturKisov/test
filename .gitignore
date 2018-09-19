@@ -3,3 +3,5 @@ database
 .env
 backend/node_modules
 backend/public/libs/*
+backend/.env
+backend/package-lock.json

@@ -1,7 +1,13 @@
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Response } from "./response.entity";
-import { Transform } from "class-transformer";
-import moment = require("moment");
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Response } from './response.entity';
+import { Transform } from 'class-transformer';
+import moment = require('moment');
 
 @Entity()
 export class Post {
@@ -17,9 +23,12 @@ export class Post {
   @Column()
   user_name: string;
 
-  @Transform((value) => {
-    return moment(value).format('MMMM Do YYYY, h:mm:ss a')
-  }, {toPlainOnly: true})
+  @Transform(
+    value => {
+      return moment(value).format('MMMM Do YYYY, h:mm:ss a');
+    },
+    { toPlainOnly: true },
+  )
   @CreateDateColumn()
   created_at: Date;
 
@@ -27,7 +36,7 @@ export class Post {
   responses: Response[];
 
   @Column({
-    default: 0
+    default: 0,
   })
   responses_count: number;
 }

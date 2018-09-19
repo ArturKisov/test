@@ -21,7 +21,6 @@
     "copy-libs.ts"
   ],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
+    "node_modules"
   ]
 }
